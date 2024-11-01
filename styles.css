@@ -1,0 +1,119 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply the Magra font to the entire body */
+body {
+    font-family: 'Magra', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .3rem 1rem;
+    background-color: #f7f3e3;
+}
+
+.logo img {
+    width: 140px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 25px; /* Adjust the size as needed */
+}
+
+.cart-search {
+    display: flex;
+    gap: 1rem;
+}
+
+.cart-icon, .search-icon {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #333;
+}
+
+.hero {
+    position: relative;
+    background: url('Garden-Home.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f7f3e3;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Apply the Magra font to the hero heading */
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #f7f3e3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Apply the Magra font to the paragraph as well */
+.hero-content p {
+    font-family: 'Magra', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #f7f3e3;
+    line-height: 1.5;
+}
+
+footer {
+    background-color: #f7f3e3;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer .social-icons a {
+    text-decoration: none;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0 0.5rem;
+}
+
+footer .social-icons a:hover {
+    color: #000;
+}
