@@ -34,42 +34,42 @@
 
     <section class="planning-section">
         <h1>Planning</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Garden</th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Size</th>
-                </tr>
+            <table id="sortable-table">
+                <thead>
+                    <tr>
+                        <th class="sortable">Garden</th>
+                        <th class="sortable">Name</th>
+                        <th class="sortable">Type</th>
+                        <th class="sortable">Size</th>
+                    </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td><img src="Individual.png" alt="Allotment Garden"></td>
-                    <td>Allotment Garden</td>
-                    <td>Individual Plots and Management</td>
-                    <td>Equal Individual Plots</td>
-                </tr>
-                <tr>
-                    <td><img src="Communal.png" alt="Communal Garden"></td>
-                    <td>Communal Garden</td>
-                    <td>Neighborhood Plot and Communal Contribution</td>
-                    <td>One Large Plot</td>
-                </tr>
-                <tr>
-                    <td><img src="mentor.png" alt="Mentor Garden"></td>
-                    <td>Mentor Garden</td>
-                    <td>Mentors Teach Mentees How To Care For Garden</td>
-                    <td>One Large Plot</td>
-                </tr>
-                <tr>
-                    <td><img src="city.png" alt="City Garden"></td>
-                    <td>City Garden</td>
-                    <td>City Appointed Workers Maintain Garden</td>
-                    <td>One Large Plot</td>
-                </tr>
-            </tbody>
-        </table>
+                <tbody>
+                    <tr>
+                        <td><img src="Individual.png" alt="Allotment Garden"></td>
+                        <td>Allotment Garden</td>
+                        <td>Individual Plots and Management</td>
+                        <td>Equal Individual Plots</td>
+                    </tr>
+                    <tr>
+                        <td><img src="Communal.png" alt="Communal Garden"></td>
+                        <td>Communal Garden</td>
+                        <td>Neighborhood Plot and Communal Contribution</td>
+                        <td>One Large Plot</td>
+                    </tr>
+                    <tr>
+                        <td><img src="mentor.png" alt="Mentor Garden"></td>
+                        <td>Mentor Garden</td>
+                        <td>Mentors Teach Mentees How To Care For Garden</td>
+                        <td>One Large Plot</td>
+                    </tr>
+                    <tr>
+                        <td><img src="city.png" alt="City Garden"></td>
+                        <td>City Garden</td>
+                        <td>City Appointed Workers Maintain Garden</td>
+                        <td>One Large Plot</td>
+                    </tr>
+                </tbody>            
+            </table>
     </main>
 
     <footer>
@@ -81,6 +81,39 @@
         </div>
         <p>&copy; Copyright 2024</p>
     </footer>
-       
+    
+    <!-- JavaScript goes here -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const table = document.getElementById("sortable-table");
+            const headers = table.querySelectorAll(".sortable");
+            let rows = Array.from(table.querySelectorAll("tbody tr"));
+            
+            headers.forEach((header, index) => {
+                header.addEventListener("click", () => {
+                    const isAsc = header.classList.contains("asc");
+                    
+                    // Toggle sorting order: remove previous sorting classes
+                    headers.forEach(h => h.classList.remove("asc", "desc"));
+                    header.classList.add(isAsc ? "desc" : "asc");
+
+                    // Sort rows based on the clicked column index
+                    rows.sort((rowA, rowB) => {
+                        const cellA = rowA.cells[index].innerText.trim();
+                        const cellB = rowB.cells[index].innerText.trim();
+
+                        if (isNaN(cellA) || isNaN(cellB)) {
+                            return (isAsc ? 1 : -1) * cellA.localeCompare(cellB);
+                        } else {
+                            return (isAsc ? 1 : -1) * (parseFloat(cellA) - parseFloat(cellB));
+                        }
+                    });
+
+                    // Rebuild the table with the sorted rows
+                    rows.forEach(row => table.querySelector("tbody").appendChild(row));
+                });
+            });
+        });
+    </script>  
 </body>
 </html>

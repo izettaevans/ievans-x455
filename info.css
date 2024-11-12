@@ -89,8 +89,20 @@ nav ul li a {
     font-family: 'Magra', sans-serif;
     font-size: 24px;
     font-weight: 400;
-    color: #f7f3e3;
+    color: #43513c;
     line-height: 1.5;
+}
+
+.info-section {
+    background-color: #43513c;    ; /* Same as the navigation bar */
+    padding: 1rem 0; /* Add some padding for better appearance */
+}
+
+.info-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #f7f3e3;
+    text-align: center;
 }
 
 footer {
@@ -138,8 +150,8 @@ footer .social-icons a:hover {
 }
 
 .dropdown {
-    background-color: #43513c;
-    color: #fff;
+    background-color: #f7f3e3;
+    color: #43513c;
     margin: 10px 0;
     border-radius: 5px;
     overflow: hidden;
@@ -148,8 +160,8 @@ footer .social-icons a:hover {
 .dropdown-button {
     width: 100%;
     padding: 15px;
-    background-color: #43513c;
-    color: #fff;
+    background-color: #f7f3e3;
+    color: #43513c;
     border: none;
     font-size: 1.2rem;
     text-align: left;
@@ -163,7 +175,7 @@ footer .social-icons a:hover {
 .dropdown-content {
     padding: 15px;
     display: none;
-    background-color: #2e3d2f;
+    background-color: #f7f3e3;
     border-top: 1px solid #fff;
 }
 

@@ -69,7 +69,7 @@ nav ul li a {
     flex-direction: column;
     align-items: center;
     margin: 20px auto;
-    width: 80%; /* Adjust the width of the carousel */
+    width: 100; /* Adjust the width of the carousel */
 }
 
 /* Main large image styling */
@@ -114,7 +114,7 @@ nav ul li a {
 
 /* Scrollable Text */
 .scrollable-text {
-    height: 100px;
+    height: 250px;
     overflow-y: auto;
     padding: 1rem;
     margin: 1rem auto;
@@ -123,6 +123,11 @@ nav ul li a {
     width: 80%;
     border-radius: 10px;
 }
+.scrollable-text h1 {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
 .scrollable-text p {
     font-size: 18px;
     line-height: 1.5;

@@ -8,9 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!-- W3.CSS library -->
+    <link rel="stylesheet" href="project.css">
 </head>
 <body>
     <header>
@@ -32,9 +31,110 @@
             <a href="#" class="cart-icon">&#128722;</a>
         </div>
     </header>
+    <section class="projects-section">
+        <h1>Projects</h1>
 
-    
+    <!-- Lightbox Section -->
 
+        <!-- First row of thumbnail images -->
+        <div class="w3-row-padding" style="margin: 15px 0px">
+            <!-- First thumbnail image -->
+            <div class="w3-col s4">
+                <img
+                    src="garden 1.png"
+                    style="width: 100%; cursor: zoom-in"
+                    onclick="openModal('garden 1.png', 'Project 1')"
+                    class="w3-hover-shadow"
+                />
+            </div>
+
+            <!-- Second thumbnail image -->
+            <div class="w3-col s4">
+                <img
+                    src="garden 2.png"
+                    style="width: 100%; cursor: zoom-in"
+                    onclick="openModal('garden 2.png', 'Project 2')"
+                    class="w3-hover-shadow"
+                />
+            </div>
+
+            <!-- Third thumbnail image -->
+            <div class="w3-col s4">
+                <img
+                    src="garden 3.png"
+                    style="width: 100%; cursor: zoom-in"
+                    onclick="openModal('garden 3.png', 'Project 3')"
+                    class="w3-hover-shadow"
+                />
+            </div>
+
+            <!-- Fourth thumbnail image -->
+            <div class="w3-col s4">
+                <img
+                    src="garden 4.png"
+                    style="width: 100%; cursor: zoom-in"
+                    onclick="openModal('garden 4.png', 'Project 4')"
+                    class="w3-hover-shadow"
+                />
+            </div>
+
+            <!-- Fifth thumbnail image -->
+            <div class="w3-col s4">
+                <img
+                    src="garden 5.png"
+                    style="width: 100%; cursor: zoom-in"
+                    onclick="openModal('garden 5.png', 'Project 5')"
+                    class="w3-hover-shadow"
+                />
+            </div>
+
+            <!-- Sixth thumbnail image -->
+            <div class="w3-col s4">
+                <img
+                    src="garden 7.jpg"
+                    style="width: 100%; cursor: zoom-in"
+                    onclick="openModal('garden 7.jpg', 'Project 6')"
+                    class="w3-hover-shadow"
+                />
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="lightboxModal" class="w3-modal">
+        <!-- Close button -->
+        <span
+            class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright"
+            style="cursor: pointer"
+            onclick="closeModal()"
+        >&times;</span>
+
+        <!-- Modal content -->
+        <div class="w3-modal-content w3-animate-zoom">
+            <h4 id="modalTitle" class="w3-center"></h4>
+            <img id="modalImage" src="" style="width: 100%" />
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to open the modal with dynamic content
+            function openModal(imageSrc, title) {
+                document.getElementById('modalImage').src = imageSrc;
+                document.getElementById('modalTitle').innerText = title;
+                document.getElementById('lightboxModal').style.display = 'block';
+            }
+
+            // Function to close the modal
+            function closeModal() {
+                document.getElementById('lightboxModal').style.display = 'none';
+            }
+
+            // Make functions globally accessible
+            window.openModal = openModal;
+            window.closeModal = closeModal;
+        });
+    </script>
     <footer>
         <p>Contact Us: <a href="mailto:info@communitygarden.com">info@communitygarden.com</a></p>
         <div class="social-icons">
@@ -44,6 +144,5 @@
         </div>
         <p>&copy; Copyright 2024</p>
     </footer>
-       
 </body>
 </html>
